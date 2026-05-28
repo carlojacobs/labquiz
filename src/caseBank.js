@@ -162,8 +162,6 @@ export function validateCaseBank(bank) {
   }
 
   const caseIds = new Set();
-  const answers = new Set();
-
   for (const item of bank.cases) {
     if (
       !item.id ||
@@ -180,7 +178,6 @@ export function validateCaseBank(bank) {
     }
 
     caseIds.add(item.id);
-    answers.add(item.answer);
 
     for (const panelName of item.panels ?? []) {
       if (!PANEL_DEFINITIONS[panelName]) {
@@ -208,10 +205,6 @@ export function validateCaseBank(bank) {
 
     validatePanelCompanions(item);
     validateInternalConsistency(item);
-  }
-
-  if (answers.size !== bank.cases.length) {
-    throw new Error("Each generated test case should have a unique answer.");
   }
 }
 

@@ -14,7 +14,7 @@ The included reference intervals are broad teaching ranges and should be reviewe
 - Unit-set selector for Netherlands/SI and United States conventional display
 - Hospital-style lab ordering: Chemistry, Hematology, Blood gases, Immunology, Coagulation, and Urine sample
 - Single editable case-bank note at `data/cases.md`
-- 26 starter cases covering anemia, kidney injury, infection-like lab patterns, liver patterns, endocrine patterns, metabolic emergencies, broader urinalysis patterns, and hematologic malignancies
+- 365 generated cases across 73 broad result types covering anemia, infection-like patterns, renal/urine disorders, metabolic emergencies, acid-base disorders, liver and pancreatic patterns, endocrine/lipid patterns, and hematology/coagulation patterns
 
 ## Run locally
 
@@ -37,8 +37,16 @@ npm run dev
 npm test
 ```
 
-The validator checks that every case has a unique answer, at least five hints, and only uses lab keys defined in the fixed lab table.
+The validator checks that every case has a unique id, at least five hints, and only uses lab keys defined in the fixed lab table.
 It also hydrates common screening panels so cases do not show isolated chemistry values that would normally be ordered together.
+
+## Regenerate the case bank
+
+```bash
+npm run generate:cases
+```
+
+The generator rebuilds `data/cases.md` with 365 teaching cases. Multiple cases can share the same broad answer so the searchable result list stays usable while the presentations vary.
 
 ## Editing the case bank
 

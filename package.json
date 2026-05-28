@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
+    "generate:cases": "node scripts/generate-large-case-bank.js",
     "test": "node scripts/validate-cases.js"
   },
   "dependencies": {
