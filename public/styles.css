@@ -29,11 +29,15 @@ body > .app-grid {
 }
 
 .app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding-block: 16px 12px;
+  background: var(--app-bg);
 }
 
 .brand-lockup {
