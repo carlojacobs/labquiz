@@ -1,0 +1,12 @@
+- [ ] A bit more room between "...SI" and chevron in region dropdown
+- [ ] Unstick navbar, or make prettier. The left margin doesn't blend.
+- [ ] Leaderboard?
+- [ ] Convert to a "daily case" format
+    - [ ] Add clear date somewhere
+    - [ ] Store in cookies when completed
+    - [ ] If leaderboard present: log in leaderboard when completed and decide scoring formula
+    - [ ] Add a calendar for completing puzzles from previous days
+- [ ] Improve naming: "Clinical lab conclusion practice" doesn't ring
+- [ ] Think about adding more aspects to the game in the form of follow-up diagnostics or formulating a plan
+- [ ] Think about validating cases before launch of game. At the moment everything is AI generated and answers aren't checked.
+- [ ] Improve result view when answer not guessed. Correct answer now presents in red box, doesn't stand out.
