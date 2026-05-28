@@ -1,0 +1,15 @@
+{
+  "name": "labquiz",
+  "version": "0.1.0",
+  "description": "A clinical lab pattern quiz webapp.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node scripts/validate-cases.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {}
+}

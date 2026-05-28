@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LabQuiz</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="app-topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">
+          <i data-lucide="microscope"></i>
+        </span>
+        <div>
+          <h1>LabQuiz</h1>
+          <p>Clinical lab conclusion practice</p>
+        </div>
+      </div>
+
+      <div class="topbar-metrics" aria-label="Game status">
+        <div class="metric">
+          <span>Case</span>
+          <strong id="caseCounter">--</strong>
+        </div>
+        <div class="metric">
+          <span>Remaining attempts</span>
+          <strong id="attemptsLeft">5</strong>
+        </div>
+        <label class="unit-select" for="unitSetSelect">
+          <span>Units</span>
+          <select id="unitSetSelect" aria-label="Country or region unit set">
+            <option value="nl">Netherlands / SI</option>
+            <option value="us">United States</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main class="app-grid">
+      <section class="panel lab-panel" aria-labelledby="labsTitle">
+        <div class="panel-header">
+          <div>
+            <h2 id="labsTitle">Lab Values</h2>
+          </div>
+          <span class="case-chip" id="caseChip">Loading</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="labs-table">
+            <thead>
+              <tr>
+                <th scope="col">Test</th>
+                <th scope="col">Value</th>
+                <th scope="col">Reference</th>
+              </tr>
+            </thead>
+            <tbody id="labsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="panel play-panel" aria-labelledby="hintsTitle">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Clinical context</p>
+            <h2 id="hintsTitle">Clinical Hints</h2>
+          </div>
+          <button class="secondary icon-button" id="newCaseButton" type="button">
+            <i data-lucide="refresh-cw" aria-hidden="true"></i>
+            <span>New case</span>
+          </button>
+        </div>
+
+        <ol class="hint-list" id="hintList"></ol>
+
+        <form class="guess-form" id="guessForm">
+          <label for="guessInput">Lab conclusion</label>
+          <div class="guess-row">
+            <input
+              id="guessInput"
+              name="guess"
+              list="resultOptions"
+              placeholder="Search result list"
+              autocomplete="off"
+              required
+            />
+            <button class="icon-button" id="guessButton" type="submit">
+              <i data-lucide="send" aria-hidden="true"></i>
+              <span>Guess</span>
+            </button>
+          </div>
+          <datalist id="resultOptions"></datalist>
+        </form>
+
+        <div class="status-message" id="statusMessage" role="status"></div>
+
+        <section class="attempt-section" aria-labelledby="attemptsTitle">
+          <h3 id="attemptsTitle">Guesses</h3>
+          <ul class="guess-list" id="guessList"></ul>
+        </section>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
