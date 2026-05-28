@@ -414,20 +414,20 @@ function renderHints(currentCase) {
 function renderGuesses() {
   elements.guessList.replaceChildren();
 
-  for (const guess of state.guesses) {
+  state.guesses.forEach((guess, index) => {
     const item = document.createElement("li");
     item.className = guess.correct ? "guess is-correct" : "guess is-wrong";
 
-    const icon = document.createElement("i");
-    icon.setAttribute("data-lucide", guess.correct ? "check" : "x");
-    icon.setAttribute("aria-hidden", "true");
+    const number = document.createElement("span");
+    number.className = "guess-number";
+    number.textContent = `${index + 1}.`;
 
     const text = document.createElement("span");
     text.textContent = guess.answer;
 
-    item.append(icon, text);
+    item.append(number, text);
     elements.guessList.append(item);
-  }
+  });
 }
 
 function renderResultOptions() {
